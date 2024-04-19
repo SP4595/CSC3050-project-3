@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/ubuntu/Desktop/CSC3050 HW03/Project 3/include"
+CXX_INCLUDES = -I/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include
 
 CXX_FLAGS = -O0 -Wall -g -std=gnu++11
 

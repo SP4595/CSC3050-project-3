@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CacheOptimized::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CacheOptimized-Debug-a0fe6aaa0d8cb0b60c20.json",
+					"jsonFile" : "target-CacheOptimized-Debug-6ff2b39ec2894b655f54.json",
 					"name" : "CacheOptimized",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "CacheSim::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CacheSim-Debug-a4bd4324c4778ba3f39a.json",
+					"jsonFile" : "target-CacheSim-Debug-f305d3f5f4901e7b3f98.json",
 					"name" : "CacheSim",
 					"projectIndex" : 0
 				}
@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build",
-		"source" : "/home/ubuntu/Desktop/CSC3050 HW03/Project 3"
+		"build" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build",
+		"source" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3"
 	},
 	"version" : 
 	{

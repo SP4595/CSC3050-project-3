@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/Cache.cpp" "CMakeFiles/CacheSim.dir/src/Cache.cpp.o" "gcc" "CMakeFiles/CacheSim.dir/src/Cache.cpp.o.d"
-  "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MainSinCache.cpp" "CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o" "gcc" "CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o.d"
-  "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MemoryManager.cpp" "CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o" "gcc" "CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o.d"
+  "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Cache.cpp" "CMakeFiles/CacheSim.dir/src/Cache.cpp.o" "gcc" "CMakeFiles/CacheSim.dir/src/Cache.cpp.o.d"
+  "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MainSinCache.cpp" "CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o" "gcc" "CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o.d"
+  "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.cpp" "CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o" "gcc" "CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o.d"
   )
 
 # Targets to which this target links.

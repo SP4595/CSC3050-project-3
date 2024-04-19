@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/ubuntu/Desktop/CSC3050 HW03/Project 3"
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build"
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CacheSim.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/CacheSim.dir/flags.make
 CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o: CMakeFiles/CacheSim.dir/flags.make
 CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o: ../src/MainSinCache.cpp
 CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o: CMakeFiles/CacheSim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o -MF CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o.d -o CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o -c "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MainSinCache.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o -MF CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o.d -o CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o -c /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MainSinCache.cpp
 
 CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MainSinCache.cpp" > CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MainSinCache.cpp > CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.i
 
 CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MainSinCache.cpp" -o CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MainSinCache.cpp -o CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.s
 
 CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o: CMakeFiles/CacheSim.dir/flags.make
 CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o: ../src/MemoryManager.cpp
 CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o: CMakeFiles/CacheSim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o -MF CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o.d -o CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o -c "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MemoryManager.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o -MF CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o.d -o CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o -c /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.cpp
 
 CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MemoryManager.cpp" > CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.cpp > CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.i
 
 CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/MemoryManager.cpp" -o CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.cpp -o CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.s
 
 CMakeFiles/CacheSim.dir/src/Cache.cpp.o: CMakeFiles/CacheSim.dir/flags.make
 CMakeFiles/CacheSim.dir/src/Cache.cpp.o: ../src/Cache.cpp
 CMakeFiles/CacheSim.dir/src/Cache.cpp.o: CMakeFiles/CacheSim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CacheSim.dir/src/Cache.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CacheSim.dir/src/Cache.cpp.o -MF CMakeFiles/CacheSim.dir/src/Cache.cpp.o.d -o CMakeFiles/CacheSim.dir/src/Cache.cpp.o -c "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/Cache.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CacheSim.dir/src/Cache.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CacheSim.dir/src/Cache.cpp.o -MF CMakeFiles/CacheSim.dir/src/Cache.cpp.o.d -o CMakeFiles/CacheSim.dir/src/Cache.cpp.o -c /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Cache.cpp
 
 CMakeFiles/CacheSim.dir/src/Cache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CacheSim.dir/src/Cache.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/Cache.cpp" > CMakeFiles/CacheSim.dir/src/Cache.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Cache.cpp > CMakeFiles/CacheSim.dir/src/Cache.cpp.i
 
 CMakeFiles/CacheSim.dir/src/Cache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CacheSim.dir/src/Cache.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/src/Cache.cpp" -o CMakeFiles/CacheSim.dir/src/Cache.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Cache.cpp -o CMakeFiles/CacheSim.dir/src/Cache.cpp.s
 
 # Object files for target CacheSim
 CacheSim_OBJECTS = \
@@ -125,7 +125,7 @@ CacheSim: CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o
 CacheSim: CMakeFiles/CacheSim.dir/src/Cache.cpp.o
 CacheSim: CMakeFiles/CacheSim.dir/build.make
 CacheSim: CMakeFiles/CacheSim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CacheSim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CacheSim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CacheSim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -137,6 +137,6 @@ CMakeFiles/CacheSim.dir/clean:
 .PHONY : CMakeFiles/CacheSim.dir/clean
 
 CMakeFiles/CacheSim.dir/depend:
-	cd "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/ubuntu/Desktop/CSC3050 HW03/Project 3" "/home/ubuntu/Desktop/CSC3050 HW03/Project 3" "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build" "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build" "/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles/CacheSim.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3 /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3 /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles/CacheSim.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/CacheSim.dir/depend
 

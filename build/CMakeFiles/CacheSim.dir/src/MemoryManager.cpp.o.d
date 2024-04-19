@@ -1,7 +1,7 @@
 CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o: \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/src/MemoryManager.cpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.cpp \
  /usr/include/stdc-predef.h \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/src/MemoryManager.h \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.h \
  /usr/include/c++/11/cstdint \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -34,7 +34,7 @@ CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio.hpp \
  /usr/include/c++/11/string /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/memoryfwd.h \
  /usr/include/c++/11/bits/char_traits.h \
@@ -164,17 +164,17 @@ CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o: \
  /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/deque \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
  /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elf_types.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_utils.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_header.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_section.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_segment.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_strings.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elf_types.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_utils.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_header.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_section.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_segment.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_strings.hpp \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_symbols.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_note.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_relocation.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/include/elfio/elfio_dynamic.hpp \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/src/Cache.h \
- /home/ubuntu/Desktop/CSC3050\ HW03/Project\ 3/src/Debug.h \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_symbols.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_note.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_relocation.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include/elfio/elfio_dynamic.hpp \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Cache.h \
+ /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Debug.h \
  /usr/include/c++/11/cstdarg
