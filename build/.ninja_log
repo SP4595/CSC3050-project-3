@@ -1,0 +1,9 @@
+# ninja log v5
+19	532	1713510876204277500	CMakeFiles/CacheOptimized.dir/src/MemoryManager.cpp.o	73245f0511bb7c5e
+14	599	1713510876245793100	CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o	f3fb6074440f5992
+16	603	1713510876214793800	CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o	3056b4791b27111d
+19	607	1713510876240792600	CMakeFiles/CacheOptimized.dir/src/MainMulCache.cpp.o	ad2944a9d323c1da
+18	629	1713510876301789400	CMakeFiles/CacheSim.dir/src/Cache.cpp.o	e432ddf1946cc6e0
+21	639	1713510876302789300	CMakeFiles/CacheOptimized.dir/src/Cache.cpp.o	b4fb07e62b2bd960
+633	928	1713510876603214100	CacheSim	351f2ce85d5edc1
+642	929	1713510876603214100	CacheOptimized	6900ae45fe03d480

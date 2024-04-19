@@ -1,1 +1,0 @@
-/usr/bin/g++ -O0 -Wall -g -rdynamic CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o CMakeFiles/CacheSim.dir/src/Cache.cpp.o -o CacheSim 

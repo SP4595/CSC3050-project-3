@@ -1,1 +1,0 @@
-/usr/bin/g++ -O0 -Wall -g -rdynamic CMakeFiles/CacheOptimized.dir/src/MainMulCache.cpp.o CMakeFiles/CacheOptimized.dir/src/MemoryManager.cpp.o CMakeFiles/CacheOptimized.dir/src/Cache.cpp.o -o CacheOptimized 
