@@ -1,0 +1,4 @@
+/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles/CacheSim.dir
+/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles/CacheOptimized.dir
+/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/CSC3050 HW03/Project 3/build/CMakeFiles/rebuild_cache.dir
