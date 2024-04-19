@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
+#include <cmath>
 
 #include "Cache.h"
 
@@ -213,12 +214,7 @@ uint32_t Cache::log2i(uint32_t val) {
     return uint32_t(-1);
   if (val == 1)
     return 0;
-  uint32_t ret = 0;
-  while (val > 1) {
-    val >>= 1;
-    ret++;
-  }
-  return ret;
+  return log2(val);
 }
 
 uint32_t Cache::getTag(uint32_t addr) {

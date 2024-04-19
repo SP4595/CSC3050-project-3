@@ -21,7 +21,7 @@ public:
   };
 
   struct Block {
-    bool valid;
+    bool valid; 
     bool modified;
     uint32_t tag;
     uint32_t id;
@@ -29,11 +29,7 @@ public:
     uint32_t lastReference;
     std::vector<uint8_t> data;
     Block() {}
-    Block(const Block &b)
-        : valid(b.valid), modified(b.modified), tag(b.tag), id(b.id),
-          size(b.size) {
-      data = b.data;
-    }
+    Block(const Block &b) : valid(b.valid), modified(b.modified), tag(b.tag), id(b.id), size(b.size) {data = b.data;}
   };
 
   struct Statistics {
@@ -74,7 +70,7 @@ private:
   // Utility Functions
   bool isPolicyValid();
   bool isPowerOfTwo(uint32_t n);
-  uint32_t log2i(uint32_t val);
+  uint32_t log2i(uint32_t val); // return log2
   uint32_t getTag(uint32_t addr);
   uint32_t getId(uint32_t addr);
   uint32_t getOffset(uint32_t addr);
