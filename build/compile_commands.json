@@ -1,32 +1,17 @@
 [
 {
-  "directory": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-  "command": "/usr/bin/g++ -I/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheSim.dir/src/MainSinCache.cpp.o -c /mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MainSinCache.cpp",
-  "file": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MainSinCache.cpp"
+  "directory": "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build",
+  "command": "/usr/bin/g++  -I/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheMul.dir/src/MainMulCache.cpp.o -c /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MainMulCache.cpp",
+  "file": "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MainMulCache.cpp"
 },
 {
-  "directory": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-  "command": "/usr/bin/g++ -I/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheSim.dir/src/MemoryManager.cpp.o -c /mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MemoryManager.cpp",
-  "file": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MemoryManager.cpp"
+  "directory": "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build",
+  "command": "/usr/bin/g++  -I/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheMul.dir/src/MemoryManager.cpp.o -c /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.cpp",
+  "file": "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/MemoryManager.cpp"
 },
 {
-  "directory": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-  "command": "/usr/bin/g++ -I/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheSim.dir/src/Cache.cpp.o -c /mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/Cache.cpp",
-  "file": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/Cache.cpp"
-},
-{
-  "directory": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-  "command": "/usr/bin/g++ -I/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheOptimized.dir/src/MainMulCache.cpp.o -c /mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MainMulCache.cpp",
-  "file": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MainMulCache.cpp"
-},
-{
-  "directory": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-  "command": "/usr/bin/g++ -I/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheOptimized.dir/src/MemoryManager.cpp.o -c /mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MemoryManager.cpp",
-  "file": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/MemoryManager.cpp"
-},
-{
-  "directory": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-  "command": "/usr/bin/g++ -I/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheOptimized.dir/src/Cache.cpp.o -c /mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/Cache.cpp",
-  "file": "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/src/Cache.cpp"
+  "directory": "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build",
+  "command": "/usr/bin/g++  -I/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/include -O0 -Wall -g -std=gnu++11 -o CMakeFiles/CacheMul.dir/src/Cache.cpp.o -c /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Cache.cpp",
+  "file": "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/src/Cache.cpp"
 }
 ]

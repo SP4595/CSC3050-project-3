@@ -15,8 +15,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -31,8 +30,7 @@
 					"name" : "RISCV-Simulator",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -40,16 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "CacheOptimized::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CacheOptimized-Debug-fe04ea4968ceb258def3.json",
-					"name" : "CacheOptimized",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "CacheSim::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CacheSim-Debug-6d90d227ed42289d7ee3.json",
-					"name" : "CacheSim",
+					"id" : "CacheMul::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CacheMul-Debug-6c260253181b4ab129bf.json",
+					"name" : "CacheMul",
 					"projectIndex" : 0
 				}
 			]
@@ -58,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-		"source" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3"
+		"build" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build",
+		"source" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3"
 	},
 	"version" : 
 	{

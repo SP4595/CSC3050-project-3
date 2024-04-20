@@ -19,9 +19,7 @@
 
 bool parseParameters(int argc, char **argv);
 void printUsage();
-void simulateCache(std::ofstream &csvFile, uint32_t cacheSize,
-                   uint32_t blockSize, uint32_t associativity, bool writeBack,
-                   bool writeAllocate);
+void simulateCache(std::ofstream &csvFile, uint32_t cacheSize, uint32_t blockSize, uint32_t associativity, bool writeBack,bool writeAllocate, bool isExclusive);
 
 bool verbose = false;
 bool isSingleStep = false;
@@ -31,7 +29,7 @@ int main(int argc, char **argv) {
   if (!parseParameters(argc, argv)) {
   }
 
-  traceFilePath = "../cache-trace/trace2.trace";
+  traceFilePath = "../cache-trace/trace1.trace";
 
   // Open CSV file and write header
   std::ofstream csvFile(std::string(traceFilePath) + ".csv");
@@ -48,10 +46,10 @@ int main(int argc, char **argv) {
         if (blockNum % associativity != 0)
           continue;
 
-        simulateCache(csvFile, cacheSize, blockSize, associativity, true, true);
-        simulateCache(csvFile, cacheSize, blockSize, associativity, true, false);
-        simulateCache(csvFile, cacheSize, blockSize, associativity, false, true);
-        simulateCache(csvFile, cacheSize, blockSize, associativity, false, false);
+        simulateCache(csvFile, cacheSize, blockSize, associativity, true, true, false);
+        simulateCache(csvFile, cacheSize, blockSize, associativity, true, false, false);
+        simulateCache(csvFile, cacheSize, blockSize, associativity, false, true, false);
+        simulateCache(csvFile, cacheSize, blockSize, associativity, false, false, false);
       }
     }
   }
@@ -95,7 +93,7 @@ void printUsage() {
   printf("Parameters: -s single step, -v verbose output\n");
 }
 
-void simulateCache(std::ofstream &csvFile, uint32_t cacheSize, uint32_t blockSize, uint32_t associativity, bool writeBack, bool writeAllocate) {
+void simulateCache(std::ofstream &csvFile, uint32_t cacheSize, uint32_t blockSize, uint32_t associativity, bool writeBack, bool writeAllocate, bool isExclusive) {
   Cache::Policy policy;
   policy.cacheSize = cacheSize;
   policy.blockSize = blockSize;
@@ -108,7 +106,7 @@ void simulateCache(std::ofstream &csvFile, uint32_t cacheSize, uint32_t blockSiz
   MemoryManager *memory = nullptr;
   Cache *cache = nullptr;
   memory = new MemoryManager();
-  cache = new Cache(memory, policy, nullptr, writeBack, writeAllocate);
+  cache = new Cache(memory, policy, nullptr, writeBack, writeAllocate, isExclusive);
   memory->setCache(cache);
 
   cache->printInfo(false);

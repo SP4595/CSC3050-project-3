@@ -125,8 +125,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build",
-		"source" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3"
+		"build" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build",
+		"source" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3"
 	},
 	"version" : 
 	{

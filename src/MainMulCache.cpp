@@ -1,9 +1,3 @@
-/**
- * Entry point for the optimized cache
- *
- * Created by He, Hao at 2019/04/30
- */
-
 #include <cstdint>
 #include <cstdlib>
 #include <fstream>
@@ -22,29 +16,40 @@ const char *traceFilePath;
 
 int main(int argc, char **argv) {
   if (!parseParameters(argc, argv)) {
-    return -1;
   }
 
-  Cache::Policy l1policy, l2policy;
-  l1policy.cacheSize = 32 * 1024;
+  traceFilePath = "../cache-trace/trace1.trace";
+
+  Cache::Policy l1policy, l2policy,l3policy;
+  l1policy.cacheSize = 16 * 1024;
   l1policy.blockSize = 64;
-  l1policy.blockNum = 32 * 1024 / 64;
-  l1policy.associativity = 8;
-  l1policy.hitLatency = 2;
+  l1policy.blockNum = l1policy.cacheSize / l1policy.blockSize;
+  l1policy.associativity = 1;
+  l1policy.hitLatency = 1;
   l1policy.missLatency = 8;
-  l2policy.cacheSize = 256 * 1024;
+  l1policy.hasVictom = true; // enable victom cache
+
+  l2policy.cacheSize = 128 * 1024;
   l2policy.blockSize = 64;
-  l2policy.blockNum = 256 * 1024 / 64;
+  l2policy.blockNum = l2policy.cacheSize / l2policy.blockSize;
   l2policy.associativity = 8;
   l2policy.hitLatency = 8;
-  l2policy.missLatency = 100;
+  l2policy.missLatency = 20;
+
+  l3policy.cacheSize = 2 * 1024 * 1024;
+  l3policy.blockSize = 64;
+  l3policy.blockNum = l3policy.cacheSize / l3policy.blockSize;
+  l3policy.associativity = 16;
+  l3policy.hitLatency = 20;
+  l3policy.missLatency = 100;
 
   // Initialize memory and cache
   MemoryManager *memory = nullptr;
-  Cache *l1cache = nullptr, *l2cache = nullptr;
+  Cache *l1cache = nullptr, *l2cache = nullptr, *l3cache = nullptr;
   memory = new MemoryManager();
-  l2cache = new Cache(memory, l2policy);
-  l1cache = new Cache(memory, l1policy, l2cache);
+  l3cache = new Cache(memory, l3policy, nullptr, true, true, true);
+  l2cache = new Cache(memory, l2policy, l3cache, true, true, true);
+  l1cache = new Cache(memory, l1policy, l2cache, true, true, true);
   memory->setCache(l1cache);
 
   // Read and execute trace in cache-trace/ folder
@@ -56,19 +61,30 @@ int main(int argc, char **argv) {
 
   char type; //'r' for read, 'w' for write
   uint32_t addr;
+  int count = 0;
   while (trace >> type >> std::hex >> addr) {
-    if (!memory->isPageExist(addr))
+    if (!memory->isPageExist(addr)) {
       memory->addPage(addr);
+    } 
+    else {
+      std::cout << ++count << "/" << 232612 << std::endl;
+    }
     switch (type) {
-    case 'r':
-      memory->getByte(addr);
-      break;
-    case 'w':
-      memory->setByte(addr, 0);
-      break;
-    default:
-      dbgprintf("Illegal type %c\n", type);
-      exit(-1);
+      case 'r':{
+        memory->getByte(addr);
+        //std::cout << "r " << addr << ": " << memory->getByte(addr) << std::endl;
+        break;
+      }
+      case 'w':{
+        uint8_t temp = memory->getByte(addr);
+        memory->setByte(addr, 0);
+        //std::cout <<"w " << addr << ": " << temp << " -> " << memory->getByte(addr) << std::endl;
+        break;
+      }
+      default:{
+        dbgprintf("Illegal type %c\n", type);
+        exit(-1);
+      }
     }
   }
 

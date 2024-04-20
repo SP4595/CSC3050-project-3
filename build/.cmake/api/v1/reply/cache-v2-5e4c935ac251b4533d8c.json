@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build"
+			"value" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -92,6 +92,22 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_COLOR_MAKEFILE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable color output during build."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -527,7 +543,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Ninja"
+			"value" : "Unix Makefiles"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -575,7 +591,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3"
+			"value" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -627,11 +643,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Program used to build from build.ninja files."
+					"value" : "Path to a program."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ninja"
+			"value" : "/usr/bin/gmake"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1111,7 +1127,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build"
+			"value" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build"
 		},
 		{
 			"name" : "RISCV-Simulator_IS_TOP_LEVEL",
@@ -1135,7 +1151,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/Administrator/Desktop/CSC3050-project-3"
+			"value" : "/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3"
 		}
 	],
 	"kind" : "cache",

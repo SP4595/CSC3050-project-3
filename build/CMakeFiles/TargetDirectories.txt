@@ -1,4 +1,3 @@
-/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build/CMakeFiles/CacheSim.dir
-/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build/CMakeFiles/CacheOptimized.dir
-/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Administrator/Desktop/CSC3050-project-3/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles/CacheMul.dir
+/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles/rebuild_cache.dir
