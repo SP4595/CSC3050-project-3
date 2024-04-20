@@ -50,6 +50,7 @@ public:
 
   void printInfo(bool verbose);
   void printStatistics();
+  void writeBlockToVictom(Block&);
 
   Statistics statistics;
 

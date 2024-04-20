@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.0)
 
 project(RISCV-Simulator)
 
@@ -14,9 +14,17 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 #    src/Cache.cpp
 #)
 
+#add_executable(
+#    CacheMul
+#    src/MainMulCache.cpp
+#    src/MemoryManager.cpp
+#    src/Cache.cpp
+#)
+
 add_executable(
-    CacheMul
-    src/MainMulCache.cpp
-    src/MemoryManager.cpp
+    Simulator 
+    src/MainCPU.cpp 
+    src/Simulator.cpp 
+    src/MemoryManager.cpp 
     src/Cache.cpp
 )

@@ -33,15 +33,14 @@ MemoryManager::~MemoryManager() {
 bool MemoryManager::addPage(uint32_t addr) {
   uint32_t i = this->getFirstEntryId(addr);
   uint32_t j = this->getSecondEntryId(addr);
-  if (this->memory[i] == nullptr) {
-    this->memory[i] = new uint8_t *[1024];
-    memset(this->memory[i], 0, sizeof(uint8_t *) * 1024);
+  if (memory[i] == nullptr) {
+    memory[i] = new uint8_t *[1024];
+    memset(memory[i], 0, sizeof(uint8_t *) * 1024);
   }
-  if (this->memory[i][j] == nullptr) {
-    this->memory[i][j] = new uint8_t[4096];
-    memset(this->memory[i][j], 0, 4096);
+  if (memory[i][j] == nullptr) {
+    memory[i][j] = new uint8_t[4096];
+    memset(memory[i][j], 0, 4096);
   } else {
-    dbgprintf("Addr 0x%x already exists and do not need an addPage()!\n", addr);
     return false;
   }
   return true;
