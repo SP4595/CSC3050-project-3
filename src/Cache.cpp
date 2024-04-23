@@ -44,6 +44,21 @@ bool Cache::inCache(uint32_t addr) {
   return getBlockId(addr) != static_cast<uint32_t>(-1) ? true : false; // can we get block id?
 }
 
+bool Cache::isInLowerCache(uint32_t addr) {
+  /**
+   * recursively check
+  */
+  if (this->lowerCache == nullptr) { // l3
+    return this->inCache(addr);
+  }
+  else if (this->inCache(addr)) {
+    return true;
+  }
+  else {
+    return this->lowerCache->isInLowerCache(addr); 
+  }
+}
+
 uint32_t Cache::getBlockId(uint32_t addr) {
   /**
    * associtive search a block
@@ -85,7 +100,19 @@ uint8_t Cache::getByte(uint32_t addr, uint32_t *cycles) {
   }
 
   // Else, find the data in memory or other level of cache
-  this->loadBlockFromLowerLevel(addr, cycles);
+  if (!isExclusive) {
+    this->loadBlockFromLowerLevel(addr, cycles);
+  } 
+  else { // check lowerlevel
+    //this->loadBlockFromLowerLevel(addr, cycles);
+    if (this->isInLowerCache(addr)) { // if exist in the lower level, then get it
+      this->loadBlockFromLowerLevel(addr, cycles);
+    }
+    else {
+      // othorwise load Block From Memory
+      this->loadBlockFromMemory(addr, cycles); // get data derectly from memory
+    }
+  }
 
   // The block is in top level cache now, return directly
   if ((blockId = this->getBlockId(addr)) != -1) {
@@ -127,7 +154,20 @@ void Cache::setByte(uint32_t addr, uint8_t val, uint32_t *cycles) {
   
 
   if (this->writeAllocate) {
-    this->loadBlockFromLowerLevel(addr, cycles);
+    if (!isExclusive) {
+      this->loadBlockFromLowerLevel(addr, cycles);
+    } 
+    else { // check lowerlevel
+      //this->loadBlockFromLowerLevel(addr, cycles);
+      if (this->isInLowerCache(addr)) { // if exist in the lower level, then get it
+        this->loadBlockFromLowerLevel(addr, cycles);
+      }
+      else {
+        // othorwise load Block From Memory
+        this->loadBlockFromMemory(addr, cycles); // get data derectly from memory
+      }
+    }
+
 
     if ((blockId = this->getBlockId(addr)) != -1) {
       uint32_t offset = this->getOffset(addr);
@@ -139,7 +179,8 @@ void Cache::setByte(uint32_t addr, uint8_t val, uint32_t *cycles) {
       fprintf(stderr, "Error: data not in top level cache!\n");
       exit(-1);
     }
-  } else {
+  } 
+  else {
     if (this->lowerCache == nullptr) {
       this->memory->setByteNoCache(addr, val);
     } else {
@@ -229,16 +270,7 @@ void Cache::loadBlockFromLowerLevel(uint32_t addr, uint32_t *cycles) {
   
   
   if (this->writeBack && replaceBlock.valid && replaceBlock.modified) { // write back to memory
-    if (!isExclusive) {
-      this->writeBlockToLowerLevel(replaceBlock);
-    }
-    else {
-      uint32_t addrBegin = this->getAddr(replaceBlock);
-      for (uint32_t i = 0; i < replaceBlock.size; ++i) {
-        this->memory->setByteNoCache(addrBegin + i, replaceBlock.data[i]); // write back to memory
-      }
-    }
-
+    this->writeBlockToLowerLevel(replaceBlock);
     this->statistics.totalCycles += this->policy.missLatency;
   }
   
@@ -246,6 +278,53 @@ void Cache::loadBlockFromLowerLevel(uint32_t addr, uint32_t *cycles) {
   this->blocks[replaceId] = b;
   
 
+}
+
+void Cache::loadBlockFromMemory(uint32_t addr, uint32_t *cycles) {
+  uint32_t blockSize = this->policy.blockSize;
+
+  // Initialize new block from memory
+  Block b;
+  b.valid = true;
+  b.modified = false;
+  b.tag = this->getTag(addr);
+  b.id = this->getId(addr);
+  b.size = blockSize;
+  b.data = std::vector<uint8_t>(b.size);
+  uint32_t bits = this->log2i(blockSize);
+  uint32_t mask = ~((1 << bits) - 1);
+  uint32_t blockAddrBegin = addr & mask;
+
+  uint32_t i =  blockAddrBegin;
+  // load from memory
+  while (i < blockAddrBegin + blockSize) {
+    b.data[i - blockAddrBegin] = this->memory->getByteNoCache(i);
+    i += 1;
+  }
+  this->statistics.numMiss++;
+  this->statistics.totalCycles += 100; // read from memory
+
+
+
+  // Find replace block
+  uint32_t id = this->getId(addr);
+  uint32_t blockIdBegin = id * this->policy.associativity;
+  uint32_t blockIdEnd = (id + 1) * this->policy.associativity;
+  uint32_t replaceId = this->getReplacementBlockId(blockIdBegin, blockIdEnd);
+  Block replaceBlock = this->blocks[replaceId];
+
+  if (policy.hasVictom) {
+    writeBlockToVictom(replaceBlock);
+  }
+  
+  
+  if (this->writeBack && replaceBlock.valid && replaceBlock.modified) { // write back to memory
+    this->writeBlockToLowerLevel(replaceBlock);
+    this->statistics.totalCycles += this->policy.missLatency;
+  }
+  
+
+  this->blocks[replaceId] = b;
 }
 
 uint32_t Cache::getReplacementBlockId(uint32_t begin, uint32_t end) {

@@ -68,8 +68,10 @@ private:
 
   void initCache();
   void loadBlockFromLowerLevel(uint32_t addr, uint32_t *cycles = nullptr); // get a block from lower level
+  void loadBlockFromMemory(uint32_t addr, uint32_t *cycles = nullptr); // get a block from memory directly
   uint32_t getReplacementBlockId(uint32_t begin, uint32_t end); // find out which Block id can be replaced (begin: the begin index of a block (start of the set))
   void writeBlockToLowerLevel(Block &b); // write to lower level
+  bool isInLowerCache(uint32_t addr); // is it in lower cache?
 
   // Utility Functions
   bool isPolicyValid();
