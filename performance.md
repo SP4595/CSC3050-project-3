@@ -80,3 +80,46 @@ Total Cycles: 44258080
 
 ## 2.2. non-victom
 
+L1 Cache:2612 
+-------- STATISTICS ----------
+Num Read: 232611
+Num Write: 50903
+Num Hit: 228814
+Num Miss: 54700
+Total Cycles: 768422
+---------- LOWER CACHE ----------
+-------- STATISTICS ----------
+Num Read: 3500800
+Num Write: 816064
+Num Hit: 4287772
+Num Miss: 29092
+Total Cycles: 34984296
+---------- LOWER CACHE ----------
+-------- STATISTICS ----------
+Num Read: 1861888
+Num Write: 320896
+Num Hit: 2175254
+Num Miss: 7530
+Total Cycles: 44258080
+
+# 3. one layer implementation
+
+## 3.1. victom
+
+L1 Cache:2612 
+-------- STATISTICS ----------
+Num Read: 232611
+Num Write: 50903
+Num Hit: 228814
+Num Miss: 53979
+Total Cycles: 6902535
+
+## 3.2. non-victom
+
+L1 Cache:2612 
+-------- STATISTICS ----------
+Num Read: 232611
+Num Write: 50903
+Num Hit: 228814
+Num Miss: 54700
+Total Cycles: 6973914
