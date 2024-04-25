@@ -14,17 +14,17 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 #    src/Cache.cpp
 #)
 
-add_executable(
-    CacheMul
-    src/MainMulCache.cpp
-    src/MemoryManager.cpp
-    src/Cache.cpp
-)
-
 #add_executable(
-#    Simulator 
-#    src/MainCPU.cpp 
-#    src/Simulator.cpp 
-#    src/MemoryManager.cpp 
+#    CacheMul
+#    src/MainMulCache.cpp
+#    src/MemoryManager.cpp
 #    src/Cache.cpp
 #)
+
+add_executable(
+    Simulator 
+    src/MainCPU.cpp 
+    src/Simulator.cpp 
+    src/MemoryManager.cpp 
+    src/Cache.cpp
+)

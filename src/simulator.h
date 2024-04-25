@@ -134,7 +134,7 @@ public:
    * the name is to make sure that they are not belongs to same instructions, and please generate it stage-by-stage
   */
   
-  Simulator(MemoryManager* memory);
+  Simulator(MemoryManager* memory, bool print_history = false);
   ~Simulator();
 
   void init_stack(uint32_t base_addr, uint32_t max_size);

@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
   l1policy.associativity = 1;
   l1policy.hitLatency = 1;
   l1policy.missLatency = 8;
-  l1policy.hasVictom = true; // enable victom cache
+  l1policy.hasVictom = false; // enable victom cache
 
   l2policy.cacheSize = 128 * 1024;
   l2policy.blockSize = 64;
@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
 
   // Exclusive? //
 
-  bool isExclusive = true;
+  bool isExclusive = false;
 
   memory = new MemoryManager();
   l3cache = new Cache(memory, l3policy, nullptr, true, true, isExclusive);
@@ -64,12 +64,19 @@ int main(int argc, char** argv) {
   l1cache = new Cache(memory, l1policy, l2cache, true, true, isExclusive);
   memory->setCache(l1cache);
 
-  Simulator simulator(memory); // set simulator
+  // print history? //
+
+  bool print_history = true;
+
+  ////////////////////
+
+
+  Simulator simulator(memory, print_history); // set simulator
   
   // load test code //
 
-  elf_file = argv[1]; // real test
-  //elf_file = "../test-release/qsort.riscv"; // just for debug
+  //elf_file = argv[1]; // real test
+  elf_file = "../test_C/test_syscall.riscv"; // just for debug
   /////////////////////////
 
   // read elf file

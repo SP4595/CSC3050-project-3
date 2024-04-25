@@ -168,9 +168,10 @@ bool branch_controler(int32_t rs1_v, int32_t rs2_v, Instruction inst) {
 /********************** simulator start *************************/
 
 // init memory, pc, register
-Simulator::Simulator(MemoryManager* memory) {
+Simulator::Simulator(MemoryManager* memory, bool print_history) {
   this->memory = memory;
   this->pc = 0;
+  this->print_history = print_history;
   memset(this->reg, 0, REGNUM * sizeof(uint32_t));
 }
 

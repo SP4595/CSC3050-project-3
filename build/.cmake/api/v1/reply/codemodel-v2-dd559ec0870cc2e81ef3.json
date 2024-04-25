@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "CacheMul::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CacheMul-Debug-6c260253181b4ab129bf.json",
-					"name" : "CacheMul",
+					"id" : "Simulator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Simulator-Debug-d8208bb01bad7c3733ae.json",
+					"name" : "Simulator",
 					"projectIndex" : 0
 				}
 			]
