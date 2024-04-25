@@ -53,10 +53,15 @@ int main(int argc, char** argv) {
   l3policy.hitLatency = 20;
   l3policy.missLatency = 100;
   Cache *l1cache = nullptr, *l2cache = nullptr, *l3cache = nullptr;
+
+  // Exclusive? //
+
+  bool isExclusive = true;
+
   memory = new MemoryManager();
-  l3cache = new Cache(memory, l3policy, nullptr, true, true, true);
-  l2cache = new Cache(memory, l2policy, l3cache, true, true, true);
-  l1cache = new Cache(memory, l1policy, l2cache, true, true, true);
+  l3cache = new Cache(memory, l3policy, nullptr, true, true, isExclusive);
+  l2cache = new Cache(memory, l2policy, l3cache, true, true, isExclusive);
+  l1cache = new Cache(memory, l1policy, l2cache, true, true, isExclusive);
   memory->setCache(l1cache);
 
   Simulator simulator(memory); // set simulator

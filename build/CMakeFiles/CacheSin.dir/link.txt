@@ -1,0 +1,1 @@
+/usr/bin/g++ -O0 -Wall -g -rdynamic CMakeFiles/CacheSin.dir/src/MainSinCache.cpp.o CMakeFiles/CacheSin.dir/src/MemoryManager.cpp.o CMakeFiles/CacheSin.dir/src/Cache.cpp.o -o CacheSin 

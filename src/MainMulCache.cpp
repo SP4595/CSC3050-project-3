@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
 
   // set exclusive //
 
-  bool isExclusive = true;
+  bool isExclusive = false;
 
   ////////////////////
 
@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
       memory->addPage(addr);
     } 
     else {
-      std::cout << ++count << "/" << 232612 << std::endl;
+      std::cout << ++count << "/" << 232612 << " \r" << std::flush; // "\r" can move the cursor to the front of the command line
     }
     switch (type) {
       case 'r':{
