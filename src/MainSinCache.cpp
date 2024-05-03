@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
   if (!parseParameters(argc, argv)) {
   }
 
-  traceFilePath = "../cache-trace/trace1.trace";
+  traceFilePath = "../cache-trace/trace1.trace"; // change your path here
 
   // Open CSV file and write header
   std::ofstream csvFile(std::string(traceFilePath) + ".csv");
