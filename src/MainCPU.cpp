@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
   l1policy.blockSize = 64;
   l1policy.blockNum = l1policy.cacheSize / l1policy.blockSize;
   l1policy.associativity = 1;
-  l1policy.hitLatency = 1;
+  l1policy.hitLatency = 0;
   l1policy.missLatency = 8;
   l1policy.hasVictom = false; // enable victom cache
 
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
   // load test code //
 
   //elf_file = argv[1]; // real test
-  elf_file = "../test_C/test_syscall.riscv"; // just for debug
+  elf_file = "../test_C/ackermann.riscv"; // just for debug
   /////////////////////////
 
   // read elf file

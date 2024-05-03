@@ -275,8 +275,6 @@ void Simulator::simulate() {
     e_reg_new = ExecuteRegister();
     m_reg_new = MemoryRegister();
 
-    // history handeling
-    history.cycle_count += 1;
   }
 }
 
