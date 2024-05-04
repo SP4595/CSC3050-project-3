@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
   l1policy.associativity = 1;
   l1policy.hitLatency = 1;
   l1policy.missLatency = 8;
-  l1policy.hasVictom = false; // enable victom cache
+  l1policy.hasVictom = true; // enable victom cache
 
   l2policy.cacheSize = 128 * 1024;
   l2policy.blockSize = 64;

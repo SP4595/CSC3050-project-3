@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
   // load test code //
 
   //elf_file = argv[1]; // real test
-  elf_file = "../test_C/matricmulti.riscv"; // just for debug
+  elf_file = "../test_C/matrixmulti.riscv"; // just for debug
   /////////////////////////
 
   // read elf file

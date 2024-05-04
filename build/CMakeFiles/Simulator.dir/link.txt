@@ -1,0 +1,1 @@
+/usr/bin/c++ -O0 -Wall -rdynamic CMakeFiles/Simulator.dir/src/MainCPU.cpp.o CMakeFiles/Simulator.dir/src/Simulator.cpp.o CMakeFiles/Simulator.dir/src/MemoryManager.cpp.o CMakeFiles/Simulator.dir/src/Cache.cpp.o -o Simulator 

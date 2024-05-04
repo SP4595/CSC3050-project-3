@@ -18,19 +18,19 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # 2. multi value excutable
 
-add_executable(
-    CacheMul
-    src/MainMulCache.cpp
-    src/MemoryManager.cpp
-    src/Cache.cpp
-)
+#add_executable(
+#    CacheMul
+#    src/MainMulCache.cpp
+#    src/MemoryManager.cpp
+#    src/Cache.cpp
+#)
 
 # 3. CPU embedding
 
-#add_executable(
-#    Simulator 
-#    src/MainCPU.cpp 
-#    src/Simulator.cpp 
-#    src/MemoryManager.cpp 
-#    src/Cache.cpp
-#)
+add_executable(
+    Simulator 
+    src/MainCPU.cpp 
+    src/Simulator.cpp 
+    src/MemoryManager.cpp 
+    src/Cache.cpp
+)
