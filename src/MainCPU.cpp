@@ -59,9 +59,9 @@ int main(int argc, char** argv) {
   bool isExclusive = false;
 
   memory = new MemoryManager();
-  l3cache = new Cache(memory, l3policy, nullptr, true, true, isExclusive);
-  l2cache = new Cache(memory, l2policy, l3cache, true, true, isExclusive);
-  l1cache = new Cache(memory, l1policy, l2cache, true, true, isExclusive);
+  l3cache = new Cache(memory, l3policy, nullptr, nullptr, true, true, isExclusive);
+  l2cache = new Cache(memory, l2policy, l3cache, nullptr, true, true, isExclusive);
+  l1cache = new Cache(memory, l1policy, l2cache, l3cache, true, true, isExclusive);
   memory->setCache(l1cache);
 
   // print history? //
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
   // load test code //
 
   //elf_file = argv[1]; // real test
-  elf_file = "../test_C/test_syscall.riscv"; // just for debug
+  elf_file = "../test_C/matricmulti.riscv"; // just for debug
   /////////////////////////
 
   // read elf file

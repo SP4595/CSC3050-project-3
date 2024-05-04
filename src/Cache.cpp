@@ -4,7 +4,7 @@
 
 #include "Cache.h"
 
-Cache::Cache(MemoryManager *manager, Policy policy, Cache *lowerCache, bool writeBack, bool writeAllocate, bool isExclusive, bool isVictom) {
+Cache::Cache(MemoryManager *manager, Policy policy, Cache *lowerCache, Cache* l3cache, bool writeBack, bool writeAllocate, bool isExclusive, bool isVictom) {
   this->referenceCounter = 0;
   this->memory = manager;
   this->policy = policy;
@@ -23,6 +23,7 @@ Cache::Cache(MemoryManager *manager, Policy policy, Cache *lowerCache, bool writ
   this->writeAllocate = writeAllocate;
   this->isExclusive = isExclusive;
   this->isVictom = isVictom;
+  this->l3Cache = l3cache;
   if (policy.hasVictom) { // create victom cache
     Policy victomPolicy;
 
@@ -33,7 +34,7 @@ Cache::Cache(MemoryManager *manager, Policy policy, Cache *lowerCache, bool writ
     victomPolicy.hitLatency = 1;
     victomPolicy.missLatency = 20;
     
-    victomCache = new Cache(manager, victomPolicy, lowerCache, true, true, true, true);
+    victomCache = new Cache(manager, victomPolicy, lowerCache, nullptr, true, true, true);
   }
 }
 
@@ -100,17 +101,25 @@ uint8_t Cache::getByte(uint32_t addr, uint32_t *cycles) {
   }
 
   // Else, find the data in memory or other level of cache
+  this->statistics.numMiss += 1;
   if (!isExclusive) {
     this->loadBlockFromLowerLevel(addr, cycles);
+    this->statistics.totalCycles += this->policy.missLatency;
   } 
   else { // check lowerlevel
     //this->loadBlockFromLowerLevel(addr, cycles);
-    if (this->isInLowerCache(addr)) { // if exist in the lower level, then get it
+    if (this->isInLowerCache(addr) && this->l3Cache->inCache(addr)) { // if in l3
+      this->loadBlockFromL3(addr, cycles);
+      this->statistics.totalCycles += l3Cache->policy.hitLatency; // hit latency = miss latency of this cache
+    }
+    else if (this->isInLowerCache(addr)) { // if exist in the lower level, then get it
       this->loadBlockFromLowerLevel(addr, cycles);
+      this->statistics.totalCycles += this->policy.missLatency;
     }
     else {
       // othorwise load Block From Memory
       this->loadBlockFromMemory(addr, cycles); // get data derectly from memory
+      this->statistics.totalCycles += 100;
     }
   }
 
@@ -152,19 +161,27 @@ void Cache::setByte(uint32_t addr, uint8_t val, uint32_t *cycles) {
 
   // Else, load the data from cache
   
+  this->statistics.numMiss ++;
 
   if (this->writeAllocate) {
     if (!isExclusive) {
       this->loadBlockFromLowerLevel(addr, cycles);
+      this->statistics.totalCycles += this->policy.missLatency;
     } 
     else { // check lowerlevel
       //this->loadBlockFromLowerLevel(addr, cycles);
-      if (this->isInLowerCache(addr)) { // if exist in the lower level, then get it
+      if (this->isInLowerCache(addr) && this->l3Cache->inCache(addr)) { // if in l3
+        this->loadBlockFromL3(addr, cycles);
+        this->statistics.totalCycles += l3Cache->policy.hitLatency; // hit latency = miss latency of this cache
+      }
+      else if (this->isInLowerCache(addr)) { // if exist in the lower level, then get it
         this->loadBlockFromLowerLevel(addr, cycles);
+        this->statistics.totalCycles += this->policy.missLatency;
       }
       else {
         // othorwise load Block From Memory
         this->loadBlockFromMemory(addr, cycles); // get data derectly from memory
+        this->statistics.totalCycles += 100;
       }
     }
 
@@ -239,8 +256,6 @@ void Cache::loadBlockFromLowerLevel(uint32_t addr, uint32_t *cycles) {
   }
   else {
     // load from lower cache
-    this->statistics.numMiss++;
-    this->statistics.totalCycles += this->policy.missLatency;
 
     for (uint32_t i = blockAddrBegin; i < blockAddrBegin + blockSize; ++i) {
       if (this->lowerCache == nullptr) {
@@ -255,6 +270,78 @@ void Cache::loadBlockFromLowerLevel(uint32_t addr, uint32_t *cycles) {
     if (isExclusive && lowerCache->inCache(addr) && this->lowerCache != nullptr) { // delete from lower cache
       b.modified = this->lowerCache->blocks[lowerCache->getBlockId(addr)].modified; // please copy the write bit
       this->lowerCache->blocks[lowerCache->getBlockId(addr)].valid = false; // remove from lowerlevel
+    }
+  }
+
+  // Find replace block
+  uint32_t id = this->getId(addr);
+  uint32_t blockIdBegin = id * this->policy.associativity;
+  uint32_t blockIdEnd = (id + 1) * this->policy.associativity;
+  uint32_t replaceId = this->getReplacementBlockId(blockIdBegin, blockIdEnd);
+  Block replaceBlock = this->blocks[replaceId];
+
+  if (policy.hasVictom) {
+    writeBlockToVictom(replaceBlock); // write to victom
+  }
+  
+  
+  if (this->writeBack && replaceBlock.valid && replaceBlock.modified) { // write back to memory
+    this->writeBlockToLowerLevel(replaceBlock);
+    this->statistics.totalCycles += this->policy.missLatency;
+  }
+  
+
+  this->blocks[replaceId] = b;
+  
+
+}
+
+void Cache::loadBlockFromL3(uint32_t addr, uint32_t *cycles) {
+  /**
+   * if isExclusive, we have to recognize if valid is false
+  */
+  uint32_t blockSize = this->policy.blockSize;
+
+  // Initialize new block from memory
+  Block b;
+  b.valid = true;
+  b.modified = false;
+  b.tag = this->getTag(addr);
+  b.id = this->getId(addr);
+  b.size = blockSize;
+  b.data = std::vector<uint8_t>(b.size);
+  uint32_t bits = this->log2i(blockSize);
+  uint32_t mask = ~((1 << bits) - 1);
+  uint32_t blockAddrBegin = addr & mask;
+
+  if (!this->l3Cache->inCache(blockAddrBegin)) { // chack if is in l3
+    std::cout << "ERROR: Not in L3Cache" << std::endl;
+    return;
+  }
+
+  int blockIdInCache = -1;
+
+  if (policy.hasVictom) { // check if is in victom cache
+    blockIdInCache = this->victomCache->getBlockId(addr);
+  }
+
+  if (blockIdInCache != -1) {
+    // load from victom cache
+    for (uint32_t i = blockAddrBegin; i < blockAddrBegin + blockSize; ++i) {
+      b.data[i - blockAddrBegin] = this->victomCache->getByte(i, cycles);
+    }
+    this->statistics.totalCycles += this->victomCache->policy.hitLatency; // do not count miss
+  }
+  else {
+    // load from lower cache
+
+    for (uint32_t i = blockAddrBegin; i < blockAddrBegin + blockSize; ++i) {
+      b.data[i - blockAddrBegin] = this->l3Cache->getByte(i, cycles);
+    }
+
+    if (isExclusive && l3Cache->inCache(addr) && this->l3Cache != nullptr) { // delete from lower cache
+      b.modified = this->l3Cache->blocks[l3Cache->getBlockId(addr)].modified; // please copy the write bit
+      this->l3Cache->blocks[l3Cache->getBlockId(addr)].valid = false; // remove from lowerlevel
     }
   }
 
@@ -311,8 +398,6 @@ void Cache::loadBlockFromMemory(uint32_t addr, uint32_t *cycles) {
   }
   else {
     // load from lower cache
-    this->statistics.numMiss++;
-    this->statistics.totalCycles += 100;
 
     for (uint32_t i = blockAddrBegin; i < blockAddrBegin + blockSize; ++i) {
       b.data[i - blockAddrBegin] = this->memory->getByteNoCache(i);

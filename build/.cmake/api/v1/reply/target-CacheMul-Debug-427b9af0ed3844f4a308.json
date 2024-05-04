@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Simulator"
+			"path" : "CacheMul"
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 30,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
@@ -68,12 +68,11 @@
 			[
 				0,
 				1,
-				2,
-				3
+				2
 			]
 		}
 	],
-	"id" : "Simulator::@6890427a1f51a3e7e1df",
+	"id" : "CacheMul::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -89,8 +88,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Simulator",
-	"nameOnDisk" : "Simulator",
+	"name" : "CacheMul",
+	"nameOnDisk" : "CacheMul",
 	"paths" : 
 	{
 		"build" : ".",
@@ -104,8 +103,7 @@
 			[
 				0,
 				1,
-				2,
-				3
+				2
 			]
 		}
 	],
@@ -114,13 +112,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/MainCPU.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Simulator.cpp",
+			"path" : "src/MainMulCache.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

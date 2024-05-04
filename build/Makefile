@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Simulator
+# Target rules for targets named CacheMul
 
 # Build rule for target.
-Simulator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Simulator
-.PHONY : Simulator
+CacheMul: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CacheMul
+.PHONY : CacheMul
 
 # fast build rule for target.
-Simulator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/build
-.PHONY : Simulator/fast
+CacheMul/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/build
+.PHONY : CacheMul/fast
 
 src/Cache.o: src/Cache.cpp.o
 .PHONY : src/Cache.o
 
 # target to build an object file
 src/Cache.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/Cache.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/Cache.cpp.o
 .PHONY : src/Cache.cpp.o
 
 src/Cache.i: src/Cache.cpp.i
@@ -142,7 +142,7 @@ src/Cache.i: src/Cache.cpp.i
 
 # target to preprocess a source file
 src/Cache.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/Cache.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/Cache.cpp.i
 .PHONY : src/Cache.cpp.i
 
 src/Cache.s: src/Cache.cpp.s
@@ -150,39 +150,39 @@ src/Cache.s: src/Cache.cpp.s
 
 # target to generate assembly for a file
 src/Cache.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/Cache.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/Cache.cpp.s
 .PHONY : src/Cache.cpp.s
 
-src/MainCPU.o: src/MainCPU.cpp.o
-.PHONY : src/MainCPU.o
+src/MainMulCache.o: src/MainMulCache.cpp.o
+.PHONY : src/MainMulCache.o
 
 # target to build an object file
-src/MainCPU.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/MainCPU.cpp.o
-.PHONY : src/MainCPU.cpp.o
+src/MainMulCache.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/MainMulCache.cpp.o
+.PHONY : src/MainMulCache.cpp.o
 
-src/MainCPU.i: src/MainCPU.cpp.i
-.PHONY : src/MainCPU.i
+src/MainMulCache.i: src/MainMulCache.cpp.i
+.PHONY : src/MainMulCache.i
 
 # target to preprocess a source file
-src/MainCPU.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/MainCPU.cpp.i
-.PHONY : src/MainCPU.cpp.i
+src/MainMulCache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/MainMulCache.cpp.i
+.PHONY : src/MainMulCache.cpp.i
 
-src/MainCPU.s: src/MainCPU.cpp.s
-.PHONY : src/MainCPU.s
+src/MainMulCache.s: src/MainMulCache.cpp.s
+.PHONY : src/MainMulCache.s
 
 # target to generate assembly for a file
-src/MainCPU.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/MainCPU.cpp.s
-.PHONY : src/MainCPU.cpp.s
+src/MainMulCache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/MainMulCache.cpp.s
+.PHONY : src/MainMulCache.cpp.s
 
 src/MemoryManager.o: src/MemoryManager.cpp.o
 .PHONY : src/MemoryManager.o
 
 # target to build an object file
 src/MemoryManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/MemoryManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/MemoryManager.cpp.o
 .PHONY : src/MemoryManager.cpp.o
 
 src/MemoryManager.i: src/MemoryManager.cpp.i
@@ -190,7 +190,7 @@ src/MemoryManager.i: src/MemoryManager.cpp.i
 
 # target to preprocess a source file
 src/MemoryManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/MemoryManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/MemoryManager.cpp.i
 .PHONY : src/MemoryManager.cpp.i
 
 src/MemoryManager.s: src/MemoryManager.cpp.s
@@ -198,32 +198,8 @@ src/MemoryManager.s: src/MemoryManager.cpp.s
 
 # target to generate assembly for a file
 src/MemoryManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/MemoryManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/src/MemoryManager.cpp.s
 .PHONY : src/MemoryManager.cpp.s
-
-src/Simulator.o: src/Simulator.cpp.o
-.PHONY : src/Simulator.o
-
-# target to build an object file
-src/Simulator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/Simulator.cpp.o
-.PHONY : src/Simulator.cpp.o
-
-src/Simulator.i: src/Simulator.cpp.i
-.PHONY : src/Simulator.i
-
-# target to preprocess a source file
-src/Simulator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/Simulator.cpp.i
-.PHONY : src/Simulator.cpp.i
-
-src/Simulator.s: src/Simulator.cpp.s
-.PHONY : src/Simulator.s
-
-# target to generate assembly for a file
-src/Simulator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/src/Simulator.cpp.s
-.PHONY : src/Simulator.cpp.s
 
 # Help Target
 help:
@@ -233,19 +209,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Simulator"
+	@echo "... CacheMul"
 	@echo "... src/Cache.o"
 	@echo "... src/Cache.i"
 	@echo "... src/Cache.s"
-	@echo "... src/MainCPU.o"
-	@echo "... src/MainCPU.i"
-	@echo "... src/MainCPU.s"
+	@echo "... src/MainMulCache.o"
+	@echo "... src/MainMulCache.i"
+	@echo "... src/MainMulCache.s"
 	@echo "... src/MemoryManager.o"
 	@echo "... src/MemoryManager.i"
 	@echo "... src/MemoryManager.s"
-	@echo "... src/Simulator.o"
-	@echo "... src/Simulator.i"
-	@echo "... src/Simulator.s"
 .PHONY : help
 
 

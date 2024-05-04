@@ -41,7 +41,7 @@ public:
     uint64_t totalCycles;
   };
 
-  Cache(MemoryManager *manager, Policy policy, Cache *lowerCache = nullptr, bool writeBack = true, bool writeAllocate = true, bool isExclusive = false, bool isVictom = false);
+  Cache(MemoryManager *manager, Policy policy, Cache *lowerCache = nullptr, Cache * L3Cache = nullptr, bool writeBack = true, bool writeAllocate = true, bool isExclusive = false, bool isVictom = false);
 
   bool inCache(uint32_t addr); // check is in
   uint32_t getBlockId(uint32_t addr); // id: the id of the block in a set
@@ -63,12 +63,14 @@ private:
   MemoryManager *memory;
   Cache *lowerCache;
   Cache *victomCache = nullptr;
+  Cache *l3Cache = nullptr;
   Policy policy;
   std::vector<Block> blocks; // how many blocks?
 
   void initCache();
   void loadBlockFromLowerLevel(uint32_t addr, uint32_t *cycles = nullptr); // get a block from lower level
   void loadBlockFromMemory(uint32_t addr, uint32_t *cycles = nullptr); // get a block from memory directly
+  void loadBlockFromL3(uint32_t addr, uint32_t * cycles = nullptr); // used in exclusive cache
   uint32_t getReplacementBlockId(uint32_t begin, uint32_t end); // find out which Block id can be replaced (begin: the begin index of a block (start of the set))
   void writeBlockToLowerLevel(Block &b); // write to lower level
   bool isInLowerCache(uint32_t addr); // is it in lower cache?

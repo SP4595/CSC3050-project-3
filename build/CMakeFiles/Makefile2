@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/buil
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Simulator.dir/all
+all: CMakeFiles/CacheMul.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Simulator.dir/clean
+clean: CMakeFiles/CacheMul.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Simulator.dir
+# Target rules for target CMakeFiles/CacheMul.dir
 
 # All Build rule for target.
-CMakeFiles/Simulator.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target Simulator"
-.PHONY : CMakeFiles/Simulator.dir/all
+CMakeFiles/CacheMul.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles --progress-num=1,2,3,4 "Built target CacheMul"
+.PHONY : CMakeFiles/CacheMul.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Simulator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Simulator.dir/all
+CMakeFiles/CacheMul.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CacheMul.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/CSC3050-project-3/CSC3050-project-3/build/CMakeFiles 0
-.PHONY : CMakeFiles/Simulator.dir/rule
+.PHONY : CMakeFiles/CacheMul.dir/rule
 
 # Convenience name for target.
-Simulator: CMakeFiles/Simulator.dir/rule
-.PHONY : Simulator
+CacheMul: CMakeFiles/CacheMul.dir/rule
+.PHONY : CacheMul
 
 # clean rule for target.
-CMakeFiles/Simulator.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Simulator.dir/build.make CMakeFiles/Simulator.dir/clean
-.PHONY : CMakeFiles/Simulator.dir/clean
+CMakeFiles/CacheMul.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CacheMul.dir/build.make CMakeFiles/CacheMul.dir/clean
+.PHONY : CMakeFiles/CacheMul.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

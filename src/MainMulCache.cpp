@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
 
   // set exclusive //
 
-  bool isExclusive = false;
+  bool isExclusive = false; // remember change nullptr of l1 cache to l3Cache (used for exclusive)
 
   ////////////////////
 
@@ -53,9 +53,9 @@ int main(int argc, char **argv) {
   MemoryManager *memory = nullptr;
   Cache *l1cache = nullptr, *l2cache = nullptr, *l3cache = nullptr;
   memory = new MemoryManager();
-  l3cache = new Cache(memory, l3policy, nullptr, true, true, isExclusive);
-  l2cache = new Cache(memory, l2policy, l3cache, true, true, isExclusive);
-  l1cache = new Cache(memory, l1policy, l2cache, true, true, isExclusive);
+  l3cache = new Cache(memory, l3policy, nullptr, nullptr,true, true, isExclusive);
+  l2cache = new Cache(memory, l2policy, l3cache, nullptr, true, true, isExclusive);
+  l1cache = new Cache(memory, l1policy, l2cache, l3cache, true, true, isExclusive); // l3 cache is only for exclusive (will, you can keep it for inclusive, but redundent)
   memory->setCache(l1cache);
 
   // Read and execute trace in cache-trace/ folder
