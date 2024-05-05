@@ -82,7 +82,6 @@ int main(int argc, char **argv) {
         break;
       }
       case 'w':{
-        uint8_t temp = memory->getByte(addr);
         memory->setByte(addr, 0);
         //std::cout <<"w " << addr << ": " << temp << " -> " << memory->getByte(addr) << std::endl;
         break;
